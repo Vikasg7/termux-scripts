@@ -3,4 +3,4 @@ export GALLIUM_DRIVER=zink
 export MESA_GL_VERSION_OVERRIDE=4.0
 export PULSE_SERVER=127.0.0.1
 
-startxfce4 &
+startxfce4
