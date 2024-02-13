@@ -5,7 +5,7 @@ An attempt to automate the process of setting up a minimal proot xfce DE inside 
 - Download `Termux` and `Termux:Boot` from `F-Droid`
 - Open `Termux` and run following command:
   ```bash
-  curl -sSL https://raw.githubusercontent.com/Vikasg7/termux-scripts/main/scripts/1-install-proot-distro.sh | bash -s debian
+  source <(curl -sSL https://raw.githubusercontent.com/Vikasg7/termux-scripts/main/install-proot-distro.sh) debian vikas
   ```
 
 ### TODO
