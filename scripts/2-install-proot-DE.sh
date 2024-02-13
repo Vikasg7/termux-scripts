@@ -33,28 +33,26 @@ adduser $USERNAME sudo
 apt install -y sudo
 
 # adds user to the sudoers file
-echo "
-  $USERNAME	ALL=(ALL:ALL) ALL
-" >> /etc/sudoers
+echo "$USERNAME	ALL=(ALL:ALL) ALL" >> /etc/sudoers
 
 # install DE 
 apt install -y xfce4 xfce4-whiskermenu-plugin xfonts-base xfce4-terminal dbus-x11 tigervnc-standalone-server tigervnc-tools
 
 # switch to user
-su - vikas
+su - vikas -c '
+  # setup tigervncserver
+  vncserver
+  vncserver -kill :1
+  curl -sSL -o .vnc/xstartup https://raw.githubusercontent.com/Vikasg7/termux-scripts/main/.vnc/xstartup
+  curl -sSL -o .vnc/config https://raw.githubusercontent.com/Vikasg7/termux-scripts/main/.vnc/config
+  chmod 755 .vnc/xstartup
 
-# setup tigervncserver
-vncserver
-vncserver -kill :1
-curl -sSL -o .vnc/xstartup https://raw.githubusercontent.com/Vikasg7/termux-scripts/main/.vnc/xstartup
-curl -sSL -o .vnc/config https://raw.githubusercontent.com/Vikasg7/termux-scripts/main/.vnc/config
-chmod 755 .vnc/xstartup
+  # setup DE
+  mkdir Desktop Documents Pictures Videos Music Templates Public Downloads
 
-# setup DE
-mkdir Desktop Documents Pictures Videos Music Templates Public Downloads
-
-# logs out of user
-exit
+  # logs out of user
+  exit
+'
 
 # logs out of root
 exit
