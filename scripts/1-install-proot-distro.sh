@@ -21,4 +21,3 @@ pkg install -y mesa-zink virglrenderer-mesa-zink vulkan-loader-android virglrend
 
 # installs distro
 proot-distro install $DISTRO
-unset DISTRO
