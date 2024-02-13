@@ -3,7 +3,7 @@
 USERNAME=$1
 
 if [ -z "$USERNAME" ]; then
-  echo "Missing required second parameter: username "
+  echo "Missing required parameter: username "
   exit 1
 fi
 

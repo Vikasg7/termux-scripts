@@ -4,7 +4,7 @@
 DISTRO=$1
 
 if [ -z "$DISTRO" ]; then
-  echo "Missing required first parameter: distro "
+  echo "Missing required parameter: distro "
   exit 1
 fi
 
@@ -26,4 +26,4 @@ proot-distro install $DISTRO
 mkdir .termux/boot
 curl -sSL -o .termux/boot/startup https://raw.githubusercontent.com/Vikasg7/termux-scripts/main/.termux/boot/startup
 
-proot-distro login $DISTRO -- /bin/bash -i -c "$(curl -sSL https://raw.githubusercontent.com/Vikasg7/termux-scripts/main/scripts/2-install-proot-DE.sh)" -s vikas
+proot-distro login $DISTRO -- /bin/bash -c "$(curl -sSL https://raw.githubusercontent.com/Vikasg7/termux-scripts/main/scripts/2-install-proot-DE.sh)" -s vikas
