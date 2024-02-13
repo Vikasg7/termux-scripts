@@ -37,7 +37,8 @@ echo "$USERNAME	ALL=(ALL:ALL) ALL" >> /etc/sudoers
 apt install -y xfce4 xfce4-whiskermenu-plugin xfonts-base xfce4-terminal dbus-x11 tigervnc-standalone-server tigervnc-tools
 
 # switch to user
-su - vikas -c '# setup tigervncserver
+su - vikas -c "
+# setup tigervncserver
 vncserver
 vncserver -kill :1
 curl -sSL -o .vnc/xstartup https://raw.githubusercontent.com/Vikasg7/termux-scripts/main/.vnc/xstartup
@@ -48,7 +49,7 @@ chmod 755 .vnc/xstartup
 mkdir Desktop Documents Pictures Videos Music Templates Public Downloads
 
 # logs out of user
-exit'
+exit"
 
 # logs out of root
 exit
