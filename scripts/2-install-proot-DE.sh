@@ -17,7 +17,7 @@ APT::Install-Recommends \"0\";
 echo "
 deb [signed-by="/usr/share/keyrings/debian-archive-keyring.gpg"] http://deb.debian.org/debian testing main contrib
 deb [signed-by="/usr/share/keyrings/debian-archive-keyring.gpg"] http://security.debian.org/debian-security testing-security main contrib
-" > /etc/apt/source.list
+" > /etc/apt/sources.list
 
 # updates repo cache with testing repos
 apt update
