@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 if [ -z $1 ]; then
   echo "Missing required parameter: username"
-  echo "Usage: ./setup-de-termux <username>"
 fi
 
 $USERNAME = $1

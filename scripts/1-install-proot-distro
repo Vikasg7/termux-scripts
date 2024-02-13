@@ -5,7 +5,6 @@ $DISTRO = $1
 
 if [ -z "$1" ]; then
   echo "Missing required parameter: distro "
-  echo "Usage: ./install-distro-termux <distro>"
   exit 1
 fi
 
