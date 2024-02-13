@@ -3,7 +3,7 @@ if [ -z $1 ]; then
   echo "Missing required parameter: username"
 fi
 
-$USERNAME = $1
+$USERNAME=$1
 
 # disables install of recommends and suggest by default
 echo "
