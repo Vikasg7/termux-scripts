@@ -1,7 +1,7 @@
 #!/data/data/com.termux/files/usr/bin/sh
 # $1 = proot-distro alias (debian, ubuntu etc) 
 
-$DISTRO=$1
+DISTRO=$1
 
 if [ -z "$1" ]; then
   echo "Missing required parameter: distro "
@@ -21,3 +21,4 @@ pkg install -y mesa-zink virglrenderer-mesa-zink vulkan-loader-android virglrend
 
 # installs distro
 proot-distro install $DISTRO
+unset DISTRO
