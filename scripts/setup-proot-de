@@ -40,6 +40,9 @@ echo "
   $USERNAME	ALL=(ALL:ALL) ALL
 " >> /etc/sudoers
 
+# switch to user
+su - vikas
+
 # install DE 
 apt install -y xfce4 xfce4-whiskermenu-plugin xfont-base xfce4-terminal dbus-x11 tigervnc-standalone-server tigervnc-tools
 
@@ -52,4 +55,8 @@ chmod 755 .vnc/xstartup
 # setup DE
 mkdir Desktop Documents Pictures Videos Music Templates Public Downloads
 
+# logs out of user
+exit 0
+
+# logs out of sudo
 exit 0
