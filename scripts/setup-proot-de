@@ -47,7 +47,7 @@ apt install -y xfce4 xfce4-whiskermenu-plugin xfont-base xfce4-terminal dbus-x11
 vncserver
 vncserver -kill :1
 wget -o .vnc/xstartup <path to xstartup file>
-chmod +x .vnc/xstartup
+chmod 755 .vnc/xstartup
 
 # setup DE
 mkdir Desktop Documents Pictures Videos Music Templates Public Downloads
