@@ -13,7 +13,7 @@ fi
 yes | pkg upgrade
 
 # installs dependencies
-pkg install -y proot-distro pulseaudio x11-repo tur-repo
+pkg install -y proot-distro sshd pulseaudio x11-repo tur-repo
 pkg update 
 pkg install -y mesa-zink virglrenderer-mesa-zink vulkan-loader-android virglrenderer-android
 
