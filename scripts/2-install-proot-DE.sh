@@ -1,34 +1,11 @@
-#!/data/data/com.termux/files/usr/bin/sh
-# $1 = proot-distro alias (debian, ubuntu etc) 
+#!/usr/bin/env bash
 
-DISTRO=$1
-USERNAME=$2
-
-if [ -z "$DISTRO" ]; then
-  echo "Missing required first parameter: distro "
-  exit 1
-fi
+USERNAME=$1
 
 if [ -z "$USERNAME" ]; then
   echo "Missing required second parameter: username "
   exit 1
 fi
-
-# upgrades packages
-yes | pkg upgrade
-
-# asks for storage permission
-termux-setup-storage
-
-# installs dependencies
-pkg install -y proot-distro openssh pulseaudio x11-repo tur-repo
-pkg update 
-pkg install -y mesa-zink virglrenderer-mesa-zink vulkan-loader-android virglrenderer-android
-
-# installs distro
-proot-distro install $DISTRO
-
-proot-distro login $DISTRO
 
 # disables install of recommends and suggest by default
 echo "
@@ -67,11 +44,8 @@ echo "
 # install DE 
 apt install -y xfce4 xfce4-whiskermenu-plugin xfonts-base xfce4-terminal dbus-x11 tigervnc-standalone-server tigervnc-tools
 
-# logs out of root
-exit
-
 # switch to user
-proot-distro login $DISTRO --user $USERNAME
+su - vikas
 
 # setup tigervncserver
 vncserver
@@ -86,5 +60,5 @@ mkdir Desktop Documents Pictures Videos Music Templates Public Downloads
 # logs out of user
 exit
 
-mkdir .termux/boot
-curl -O .termux/boot/startup https://raw.githubusercontent.com/Vikasg7/termux-scripts/main/.termux/boot/startup
+# logs out of root
+exit
