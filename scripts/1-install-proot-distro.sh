@@ -21,3 +21,11 @@ pkg install -y mesa-zink virglrenderer-mesa-zink vulkan-loader-android virglrend
 
 # installs distro
 proot-distro install $DISTRO
+
+proot-distro login $DISTRO
+
+echo "YAY! I am inside proot distro"
+
+exit
+
+echo "Now I am inside termux"
