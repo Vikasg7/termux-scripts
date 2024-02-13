@@ -11,6 +11,9 @@ fi
 # upgrades packages
 yes | pkg upgrade
 
+# asks for storage permission
+termux-setup-storage
+
 # installs dependencies
 pkg install -y proot-distro openssh pulseaudio x11-repo tur-repo
 pkg update 
