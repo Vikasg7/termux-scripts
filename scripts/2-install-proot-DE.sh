@@ -13,7 +13,7 @@ echo "
   APT::Install-Recommends \"0\";
 " > /etc/apt/apt.conf
 
-updates apt sources to testing
+# updates apt sources to testing
 echo "
   deb [signed-by="/usr/share/keyrings/debian-archive-keyring.gpg"] http://deb.debian.org/debian testing main contrib
   deb [signed-by="/usr/share/keyrings/debian-archive-keyring.gpg"] http://security.debian.org/debian-security testing-security main contrib
@@ -50,8 +50,8 @@ su - vikas
 # setup tigervncserver
 vncserver
 vncserver -kill :1
-curl -O .vnc/xstartup https://raw.githubusercontent.com/Vikasg7/termux-scripts/main/.vnc/xstartup
-curl -O .vnc/config https://raw.githubusercontent.com/Vikasg7/termux-scripts/main/.vnc/config
+curl -sSL -o .vnc/xstartup https://raw.githubusercontent.com/Vikasg7/termux-scripts/main/.vnc/xstartup
+curl -sSL -o .vnc/config https://raw.githubusercontent.com/Vikasg7/termux-scripts/main/.vnc/config
 chmod 755 .vnc/xstartup
 
 # setup DE
