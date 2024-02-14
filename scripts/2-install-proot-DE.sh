@@ -33,6 +33,8 @@ adduser $USERNAME
 
 # adds user to the sudo group
 adduser $USERNAME sudo
+adduser $USERNAME audio
+adduser $USERNAME video
 
 apt install -y sudo
 
