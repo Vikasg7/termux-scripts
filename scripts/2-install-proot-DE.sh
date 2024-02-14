@@ -51,8 +51,8 @@ su - vikas -c "
 # setup tigervncserver
 echo '* Type vnc login password (at least 6 characters)'
 vncpasswd
-curl -sSL -o .vnc/xstartup https://raw.githubusercontent.com/Vikasg7/termux-scripts/main/.vnc/xstartup
-curl -sSL -o .vnc/config https://raw.githubusercontent.com/Vikasg7/termux-scripts/main/.vnc/config
+curl -sSL https://raw.githubusercontent.com/Vikasg7/termux-scripts/main/.vnc/xstartup > .vnc/xstartup
+curl -sSL https://raw.githubusercontent.com/Vikasg7/termux-scripts/main/.vnc/config > .vnc/config
 chmod 755 .vnc/xstartup
 
 # setup DE

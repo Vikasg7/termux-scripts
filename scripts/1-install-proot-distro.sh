@@ -27,6 +27,6 @@ proot-distro install $DISTRO
 
 # enables Termux:Boot script to be called on phone boot inside termux
 mkdir .termux/boot
-curl -sSL -o .termux/boot/startup https://raw.githubusercontent.com/Vikasg7/termux-scripts/main/.termux/boot/startup
+curl -sSL https://raw.githubusercontent.com/Vikasg7/termux-scripts/main/.termux/boot/startup > .termux/boot/startup
 
 proot-distro login $DISTRO -- source <(curl -sSL https://raw.githubusercontent.com/Vikasg7/termux-scripts/main/scripts/2-install-proot-DE.sh) vikas
