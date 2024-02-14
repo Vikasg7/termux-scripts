@@ -44,7 +44,7 @@ $USERNAME	ALL=(ALL:ALL) ALL
 " >> /etc/sudoers
 
 # install DE 
-apt install -y xfce4 xfce4-whiskermenu-plugin xfonts-base xfce4-terminal dbus-x11 tigervnc-standalone-server tigervnc-tools
+apt install -y xfce4 xfce4-whiskermenu-plugin lxmusic xfonts-base xfce4-terminal dbus-x11 tigervnc-standalone-server tigervnc-tools
 
 # switch to user
 su - vikas -c "
