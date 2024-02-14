@@ -18,5 +18,5 @@ An attempt to automate the process of setting up a minimal proot xfce DE inside 
 _Note: 192.168.1.x can be replaced with localhost_
 
 ### TODO
-- [ ] figure out audio
+- [x] figure out audio
 - [x] test Hardware acceleration using glmark2
