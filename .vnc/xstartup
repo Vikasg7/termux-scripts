@@ -1,6 +1,9 @@
 export DISPLAY=":1"
-export GALLIUM_DRIVER=zink
-export MESA_GL_VERSION_OVERRIDE=4.0
+# for opengl
+export GALLIUM_DRIVER=virpipe
+# for vulkan via zink
+# export GALLIUM_DRIVER=zink
+export MESA_GL_VERSION_OVERRIDE=3.2
 export PULSE_SERVER=127.0.0.1
 
 startxfce4

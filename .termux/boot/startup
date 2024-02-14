@@ -8,7 +8,11 @@ sshd
 pulseaudio --start --load="module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1" --exit-idle-time=-1
 
 # starts the hardware acceleration
-MESA_NO_ERROR=1 MESA_GL_VERSION_OVERRIDE=4.3COMPAT MESA_GLES_VERSION_OVERRIDE=3.2 GALLIUM_DRIVER=zink ZINK_DESCRIPTORS=lazy virgl_test_server --use-egl-surfaceless --use-gles &
+# opengl
+virgl_test_server_android &
+
+# vulkan via zink
+# MESA_LOADER_DRIVER_OVERRIDE=zink GALLIUM_DRIVER=zink ZINK_DESCRIPTORS=lazy virgl_test_server --use-egl-surfaceless --use-gles &
 
 # logins to the proot-distro and starts the vncserver
-proot-distro login debian --user vikas -- /bin/bash -c 'vncserver'
+proot-distro login debian --user vikas --shared-tmp --bind $HOME/storage:/mnt/Phone -- /bin/bash -c 'rm -rf /tmp/.X* && vncserver'
