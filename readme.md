@@ -7,12 +7,16 @@ An attempt to automate the process of setting up a minimal proot xfce DE inside 
   ```bash
   source <(curl -sSL https://raw.githubusercontent.com/Vikasg7/termux-scripts/main/scripts/1-install-proot-distro.sh) debian
   ```
-- When the script, finishes you should see yourself logged in proot debian distro. Copy and Run following command there:
+- Restart the phone
+- You should be able to ssh or vnc into proot-distro using localhost or DNS Server IP (192.168.1.x)
   ```bash
-  source <(curl -sSL https://raw.githubusercontent.com/Vikasg7/termux-scripts/main/scripts/2-install-proot-DE.sh) vikas
+  ssh 192.168.1.x -p 8022
   ```
+  ```bash
+  vncviewer -passwd your_password 192.168.1.x:1
+  ```
+_Note: 192.168.1.x can be replaced with localhost_
 
 ### TODO
 - [ ] figure out audio
-- [ ] disable sshd
-- [ ] test Hardware acceleration using glmark2
+- [x] test Hardware acceleration using glmark2
