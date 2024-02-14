@@ -19,7 +19,7 @@ pkg install -y proot-distro openssh pulseaudio x11-repo tur-repo
 pkg update 
 pkg install -y mesa-zink virglrenderer-mesa-zink vulkan-loader-android virglrenderer-android
 
-# assigns password to default termux user to help ssh
+echo "* Assign password to default termux user to help ssh."
 passwd
 
 # installs distro
