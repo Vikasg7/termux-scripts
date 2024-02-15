@@ -17,6 +17,17 @@ An attempt to automate the process of setting up a minimal proot xfce DE inside 
   ```
 _Note: 192.168.1.x can be replaced with localhost_
 
+### Avoid killing background processes
+- Enable USB/Wireless Debugging, Install android-tools on your PC and Connect your device to a PC with abd. 
+- Persit abd config on reboot
+  ```bash
+  adb shell "/system/bin/device_config set_sync_disabled_for_tests persistent"
+  ```
+- Disable Killing Phantom Processes. [Here](https://github.com/termux/termux-app/issues/2366#issuecomment-955149284) is the Explanation.
+  ```bash
+  adb shell "/system/bin/device_config put activity_manager max_phantom_processes 2147483647"
+  ```
+
 ### TODO
 - [x] figure out audio
 - [x] test Hardware acceleration using glmark2
