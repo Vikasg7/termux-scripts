@@ -30,7 +30,7 @@ mkdir .termux/boot
 curl -sSL https://raw.githubusercontent.com/Vikasg7/termux-scripts/main/.termux/boot/startup > .termux/boot/startup
 
 # adds shortcut start the distro manually
-curl -sSL https://raw.githubusercontent.com/Vikasg7/termux-scripts/main/.termux/scripts/3-start-proot-distro.sh > $PREFIX/bin/start-proot-distro
+curl -sSL https://raw.githubusercontent.com/Vikasg7/termux-scripts/main/scripts/3-start-proot-distro.sh > $PREFIX/bin/start-proot-distro
 chmod +x $PREFIX/bin/start-proot-distro
 
 # setup proot-distro
