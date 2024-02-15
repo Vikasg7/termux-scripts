@@ -29,4 +29,8 @@ proot-distro install $DISTRO
 mkdir .termux/boot
 curl -sSL https://raw.githubusercontent.com/Vikasg7/termux-scripts/main/.termux/boot/startup > .termux/boot/startup
 
+# adds shortcut start the distro manually
+curl -sSL https://raw.githubusercontent.com/Vikasg7/termux-scripts/main/.termux/scripts/3-start-distro.sh > $PREFIX/bin/start-proot-distro
+
+# setup proot-distro
 proot-distro login $DISTRO -- source <(curl -sSL https://raw.githubusercontent.com/Vikasg7/termux-scripts/main/scripts/2-install-proot-DE.sh) vikas
