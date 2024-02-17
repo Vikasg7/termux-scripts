@@ -44,6 +44,7 @@ By default opengl drivers are enabled. You can switch to zink(vulkan) by
   ```bash
   # export GALLIUM_DRIVER=zink
   ```
+- Restart the phone
 
 ### Avoid killing background processes
 - Enable USB/Wireless Debugging, Install android-tools on your PC and Connect your device to a PC with adb. 
