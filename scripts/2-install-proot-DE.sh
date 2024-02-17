@@ -44,7 +44,7 @@ $USERNAME	ALL=(ALL:ALL) ALL
 " >> /etc/sudoers
 
 # install DE 
-apt install -y xfce4 xfce4-whiskermenu-plugin audacious xfonts-base xfce4-terminal dbus-x11 \
+apt install -y xfce4 xfce4-whiskermenu-plugin audacious xfonts-base xfce4-terminal dbus-x11 file-roller\
                tigervnc-standalone-server tigervnc-tools at-spi2-core ristretto mousepad aptitude\
                thunar-archive-plugin xfce4-notifyd xfce4-screenshooter xfce4-taskmanager parole
 
