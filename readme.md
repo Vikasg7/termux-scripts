@@ -15,7 +15,16 @@ An attempt to automate the process of setting up a minimal proot xfce DE inside 
   ```bash
   vncviewer -passwd your_password 192.168.1.x:1
   ```
-_Note: 192.168.1.x can be replaced with localhost_
+  _Note: 192.168.1.x can be replaced with localhost_
+- termux-x11 is also supported. Disable vncserver by commenting out the following line in `.termux/boot/startup`:
+  ```bash
+  # proot-distro login debian --user vikas --no-kill-on-exit --shared-tmp --bind $HOME/storage:/mnt/Phone -- /bin/bash -c 'rm -rf /tmp/.X* && vncserver -autokill yes'
+  ```
+  and uncomment following line.
+  ```bash
+  proot-distro login debian --user vikas --no-kill-on-exit --shared-tmp --bind $HOME/storage:/mnt/Phone -- /bin/bash -c 'termux-x11 -xstartup "bash .vnc/xstartup" :1'
+  ```
+- Restart the phone and open termux-x11 app, you should see the desktop.
 
 ### Avoid killing background processes
 - Enable USB/Wireless Debugging, Install android-tools on your PC and Connect your device to a PC with abd. 

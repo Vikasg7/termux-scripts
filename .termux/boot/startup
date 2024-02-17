@@ -1,18 +1,20 @@
 #!/data/data/com.termux/files/usr/bin/sh
 termux-wake-lock
 
-# ssh daemon
+## ssh daemon
 sshd -D &
 
-# starts pulse audio daemon
+## starts pulse audio daemon
 pulseaudio --start --load="module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1" --exit-idle-time=-1 --daemonize=false &
 
-# starts the hardware acceleration
-# opengl
+## starts the hardware acceleration
+## opengl
 virgl_test_server_android &
-
-# vulkan via zink
+## vulkan via zink
 # MESA_LOADER_DRIVER_OVERRIDE=zink GALLIUM_DRIVER=zink ZINK_DESCRIPTORS=lazy virgl_test_server --use-egl-surfaceless --use-gles &
 
-# logins to the proot-distro and starts the vncserver
+## logins to the proot-distro and starts the vncserver
 proot-distro login debian --user vikas --no-kill-on-exit --shared-tmp --bind $HOME/storage:/mnt/Phone -- /bin/bash -c 'rm -rf /tmp/.X* && vncserver -autokill yes'
+
+## logins to the proot-distro and start the termux-x11 server
+# proot-distro login debian --user vikas --no-kill-on-exit --shared-tmp --bind $HOME/storage:/mnt/Phone -- /bin/bash -c 'termux-x11 -xstartup "bash .vnc/xstartup" :1'
