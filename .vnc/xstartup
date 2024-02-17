@@ -1,7 +1,7 @@
 export DISPLAY=":1"
-# for opengl
+## for opengl
 export GALLIUM_DRIVER=virpipe
-# for vulkan via zink
+## for vulkan via zink
 # export GALLIUM_DRIVER=zink
 export MESA_GL_VERSION_OVERRIDE=3.2
 export PULSE_SERVER=127.0.0.1
