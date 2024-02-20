@@ -5,6 +5,9 @@ curl -sSL https://raw.githubusercontent.com/Vikasg7/termux-scripts/main/.vnc/xst
 curl -sSL https://raw.githubusercontent.com/Vikasg7/termux-scripts/main/.vnc/config > .vnc/config
 chmod 755 .vnc/xstartup
 
+# adds panel stype improvements
+curl -sSL https://raw.githubusercontent.com/Vikasg7/termux-scripts/main/.config/gtk-3.0/gtk.css > .config/gtk-3.0/gtk.css
+
 # setup DE
 mkdir Desktop Documents Pictures Videos Music Templates Public Downloads
 
