@@ -47,7 +47,7 @@ $USERNAME	ALL=(ALL:ALL) ALL
 apt install -y xfce4 xfce4-whiskermenu-plugin audacious xfonts-base xfce4-terminal dbus-x11 file-roller chromium wget \
                tigervnc-standalone-server tigervnc-tools at-spi2-core ristretto mousepad aptitude git make tumbler \
                thunar-archive-plugin xfce4-notifyd xfce4-screenshooter xfce4-taskmanager parole policykit-1-gnome nano \
-               bash-completion librsvg2-common
+               bash-completion
 
 source <(curl -sSL https://raw.githubusercontent.com/Vikasg7/termux-scripts/main/scripts/3-install-mint-themes.sh)
 
