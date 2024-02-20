@@ -43,25 +43,15 @@ echo "
 $USERNAME	ALL=(ALL:ALL) ALL
 " >> /etc/sudoers
 
-# install DE 
-apt install -y xfce4 xfce4-whiskermenu-plugin audacious xfonts-base xfce4-terminal dbus-x11 file-roller\
-               tigervnc-standalone-server tigervnc-tools at-spi2-core ristretto mousepad aptitude\
-               thunar-archive-plugin xfce4-notifyd xfce4-screenshooter xfce4-taskmanager parole
+# install DE f
+apt install -y xfce4 xfce4-whiskermenu-plugin audacious xfonts-base xfce4-terminal dbus-x11 file-roller chromium wget\
+               tigervnc-standalone-server tigervnc-tools at-spi2-core ristretto mousepad aptitude git make tumbler\
+               thunar-archive-plugin xfce4-notifyd xfce4-screenshooter xfce4-taskmanager parole policykit-1-gnome 
+
+source <(curl -sSL https://raw.githubusercontent.com/Vikasg7/termux-scripts/main/scripts/3-install-mint-themes.sh)
 
 # switch to user
-su - vikas -c "
-# setup tigervncserver
-echo '* Type vnc login password (at least 6 characters)'
-vncpasswd
-curl -sSL https://raw.githubusercontent.com/Vikasg7/termux-scripts/main/.vnc/xstartup > .vnc/xstartup
-curl -sSL https://raw.githubusercontent.com/Vikasg7/termux-scripts/main/.vnc/config > .vnc/config
-chmod 755 .vnc/xstartup
-
-# setup DE
-mkdir Desktop Documents Pictures Videos Music Templates Public Downloads
-
-# logs out of user
-exit"
+su -c "$(curl -sSL https://raw.githubusercontent.com/Vikasg7/termux-scripts/main/scripts/4-setup-proot-DE.sh)" - vikas
 
 # logs out of root
 exit
