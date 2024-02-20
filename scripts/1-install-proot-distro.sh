@@ -8,6 +8,9 @@ if [ -z "$DISTRO" ]; then
   exit 1
 fi
 
+# keeping a wake lock so that installation can keep running in the background
+termux-wake-lock
+
 # upgrades packages
 yes | pkg upgrade
 
