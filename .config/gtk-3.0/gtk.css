@@ -6,21 +6,3 @@
 #pulseaudio-button image {
   -gtk-icon-transform: scale(0.60);
 }
-
-#xfce4-notification-plugin {
-  margin-right: 6px;
-}
-
-#xfce4-notification-plugin image {
-  margin-right: -6px;
-  margin-left: -6px
-}
-
-#pulseaudio-button {
-  margin-left: 6px;
-}
-
-#pulseaudio-button image {
-  margin-right: -6px;
-  margin-left: -6px
-}
