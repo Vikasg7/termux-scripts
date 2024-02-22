@@ -21,6 +21,7 @@ termux-setup-storage
 pkg install -y proot-distro openssh pulseaudio x11-repo tur-repo
 pkg update 
 pkg install -y mesa-zink virglrenderer-mesa-zink vulkan-loader-android virglrenderer-android termux-x11-nightly
+apt autoremove -y
 
 echo "* Assign password to default termux user to help ssh"
 passwd

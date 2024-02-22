@@ -6,6 +6,7 @@ curl -sSL https://raw.githubusercontent.com/Vikasg7/termux-scripts/main/.vnc/con
 chmod 755 .vnc/xstartup
 
 # adds panel stype improvements
+mkdir .config/gtk-3.0
 curl -sSL https://raw.githubusercontent.com/Vikasg7/termux-scripts/main/.config/gtk-3.0/gtk.css > .config/gtk-3.0/gtk.css
 
 # setup DE
