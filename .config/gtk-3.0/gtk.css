@@ -1,8 +1,0 @@
-.tasklist {
-  -XfceTasklist-minimized-icon-lucency: 100;
-}
-
-#xfce4-notification-plugin image,
-#pulseaudio-button image {
-  -gtk-icon-transform: scale(0.60);
-}
