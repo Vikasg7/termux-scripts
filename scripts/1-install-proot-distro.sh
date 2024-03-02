@@ -8,16 +8,16 @@ if [ -z "$DISTRO" ]; then
   exit 1
 fi
 
-# keeping a wake lock so that installation can keep running in the background
+## keeping a wake lock so that installation can keep running in the background
 termux-wake-lock
 
-# upgrades packages
+## upgrades packages
 yes | pkg upgrade
 
-# asks for storage permission
+## asks for storage permission
 termux-setup-storage
 
-# installs dependencies
+## installs dependencies
 pkg install -y proot-distro openssh pulseaudio x11-repo tur-repo
 pkg update 
 pkg install -y mesa-zink virglrenderer-mesa-zink vulkan-loader-android virglrenderer-android termux-x11-nightly
@@ -26,12 +26,12 @@ apt autoremove -y
 echo "* Assign password to default termux user to help ssh"
 passwd
 
-# installs distro
+## installs distro
 proot-distro install $DISTRO
 
-# enables Termux:Boot script to be called on phone boot inside termux
+## enables Termux:Boot script to be called on phone boot inside termux
 mkdir .termux/boot
 curl -sSL https://raw.githubusercontent.com/Vikasg7/termux-scripts/main/.termux/boot/startup > .termux/boot/startup
 
-# setup proot-distro
+## setup proot-distro
 proot-distro login $DISTRO -- source <(curl -sSL https://raw.githubusercontent.com/Vikasg7/termux-scripts/main/scripts/2-install-proot-DE.sh) vikas

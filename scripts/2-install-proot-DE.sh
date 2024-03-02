@@ -19,6 +19,15 @@ deb [signed-by="/usr/share/keyrings/debian-archive-keyring.gpg"] http://deb.debi
 deb [signed-by="/usr/share/keyrings/debian-archive-keyring.gpg"] http://security.debian.org/debian-security testing-security main contrib
 " > /etc/apt/sources.list
 
+## adds vscodium gpg key
+wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg \
+    | gpg --dearmor \
+    | sudo dd of=/usr/share/keyrings/vscodium-archive-keyring.gpg
+
+## adds vscodium repo
+echo 'deb [ signed-by=/usr/share/keyrings/vscodium-archive-keyring.gpg ] https://download.vscodium.com/debs vscodium main' \
+    | sudo tee /etc/apt/sources.list.d/vscodium.list
+
 ## updates repo cache with testing repos
 apt update
 
@@ -44,10 +53,10 @@ $USERNAME	ALL=(ALL:ALL) ALL
 " >> /etc/sudoers
 
 ## install DE
-apt install -y xfce4 xfce4-whiskermenu-plugin audacious xfonts-base xfce4-terminal dbus-x11 file-roller chromium wget \
-               tigervnc-standalone-server tigervnc-tools at-spi2-core ristretto mousepad aptitude git make tumbler \
+apt install -y xfce4 xfce4-whiskermenu-plugin gnome-keyring audacious xfonts-base xfce4-terminal dbus-x11 file-roller \
+               tigervnc-standalone-server tigervnc-tools at-spi2-core ristretto mousepad aptitude git make tumbler wget \
                thunar-archive-plugin xfce4-notifyd xfce4-screenshooter xfce4-taskmanager parole policykit-1-gnome nano \
-               bash-completion gnome-keyring
+               bash-completion librsvg2-common chromium codium
 apt autoremove -y
 
 # install themes and icons
