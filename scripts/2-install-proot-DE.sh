@@ -19,20 +19,11 @@ deb [signed-by="/usr/share/keyrings/debian-archive-keyring.gpg"] http://deb.debi
 deb [signed-by="/usr/share/keyrings/debian-archive-keyring.gpg"] http://security.debian.org/debian-security testing-security main contrib
 " > /etc/apt/sources.list
 
-## adds vscodium gpg key
-wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg \
-    | gpg --dearmor \
-    | sudo dd of=/usr/share/keyrings/vscodium-archive-keyring.gpg
-
-## adds vscodium repo
-echo 'deb [ signed-by=/usr/share/keyrings/vscodium-archive-keyring.gpg ] https://download.vscodium.com/debs vscodium main' \
-    | sudo tee /etc/apt/sources.list.d/vscodium.list
-
 ## updates repo cache with testing repos
 apt update
 
 ## installs apt deps befor `apt upgrade`
-apt install -y apt-utils whiptail
+apt install -y apt-utils whiptail gpg sudo
 
 ## upgrades pacakges
 yes | apt upgrade
@@ -45,14 +36,22 @@ adduser $USERNAME sudo
 adduser $USERNAME audio
 adduser $USERNAME video
 
-apt install -y sudo
-
 ## adds user to the sudoers file
 echo "
 $USERNAME	ALL=(ALL:ALL) ALL
 " >> /etc/sudoers
 
+## adds vscodium gpg key
+wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg \
+    | gpg --dearmor \
+    | sudo dd of=/usr/share/keyrings/vscodium-archive-keyring.gpg
+
+## adds vscodium repo
+echo 'deb [ signed-by=/usr/share/keyrings/vscodium-archive-keyring.gpg ] https://download.vscodium.com/debs vscodium main' \
+    | sudo tee /etc/apt/sources.list.d/vscodium.list
+
 ## install DE
+apt update
 apt install -y xfce4 xfce4-whiskermenu-plugin gnome-keyring audacious xfonts-base xfce4-terminal dbus-x11 file-roller \
                tigervnc-standalone-server tigervnc-tools at-spi2-core ristretto mousepad aptitude git make tumbler wget \
                thunar-archive-plugin xfce4-notifyd xfce4-screenshooter xfce4-taskmanager parole policykit-1-gnome nano \
